@@ -1,58 +1,175 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gestion Pro — Application Web de gestion de projets
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Présentation
 
-## About Laravel
+**Gestion Pro** est une application web de démonstration développée avec **Laravel**, permettant de gérer des projets à travers une interface simple et structurée.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ce projet a été réalisé dans le cadre de ma démarche de mise à niveau sur les technologies modernes de l'écosystème PHP et de Laravel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Il illustre notamment ma capacité à concevoir une application web, structurer son code, gérer une base de données et mettre en œuvre les opérations CRUD.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fonctionnalités
 
-## Learning Laravel
+* 📋 Affichage de la liste des projets
+* ➕ Création d'un projet
+* ✏️ Modification d'un projet
+* 🗑️ Suppression d'un projet
+* 🔎 Gestion des informations d'un projet
+* 📊 Gestion du statut des projets
+* 🗄️ Persistance des données dans MySQL
+* 🧩 Organisation du projet selon l'architecture Laravel MVC
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Technologies utilisées
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* **PHP 8.3**
+* **Laravel 13**
+* **MySQL**
+* **Blade**
+* **JavaScript**
+* **Vite**
+* **HTML / CSS**
+* **Git / GitHub**
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Architecture
 
-## Agentic Development
+Le projet utilise l'architecture **MVC (Model-View-Controller)** de Laravel.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Principaux éléments :
 
-```bash
-composer require laravel/boost --dev
+```text
+app/
+├── Http/
+│   └── Controllers/
+│       └── ProjetController.php
+│
+├── Models/
+│   └── Projet.php
+│
+database/
+└── migrations/
+    └── create_projets_table.php
 
-php artisan boost:install
+resources/
+└── views/
+    └── projets/
+        ├── create.blade.php
+        └── edit.blade.php
+
+routes/
+└── web.php
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Modèle Projet
 
-## Contributing
+Le modèle `Projet` permet notamment de gérer :
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* le nom du projet ;
+* sa description ;
+* son statut.
 
-## Code of Conduct
+Les données sont enregistrées dans une base de données MySQL à travers l'ORM **Eloquent** de Laravel.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Installation
 
-## Security Vulnerabilities
+### Prérequis
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* PHP 8.3 ou supérieur
+* Composer
+* MySQL
+* Node.js et npm
+* Git
 
-## License
+### Installation du projet
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Cloner le dépôt :
+
+```bash
+git clone https://github.com/Jarry-github/gestion-pro.git
+cd gestion-pro
+```
+
+Installer les dépendances PHP :
+
+```bash
+composer install
+```
+
+Installer les dépendances JavaScript :
+
+```bash
+npm install
+```
+
+Créer le fichier d'environnement :
+
+```bash
+cp .env.example .env
+```
+
+Générer la clé Laravel :
+
+```bash
+php artisan key:generate
+```
+
+Configurer ensuite les paramètres de connexion à la base de données dans le fichier `.env`.
+
+Exécuter les migrations :
+
+```bash
+php artisan migrate
+```
+
+Lancer l'application :
+
+```bash
+php artisan serve
+```
+
+Pour les ressources front-end :
+
+```bash
+npm run dev
+```
+
+## Objectifs techniques
+
+Ce projet me permet de mettre en pratique et de renforcer mes compétences sur :
+
+* le développement PHP moderne ;
+* Laravel et son architecture MVC ;
+* l'ORM Eloquent ;
+* les migrations et la gestion des bases de données ;
+* les opérations CRUD ;
+* la conception d'applications web ;
+* Git et GitHub ;
+* l'organisation et la maintenance du code.
+
+## Profil du développeur
+
+**Chef de Projet & Développeur Web — 19 ans d'expérience**
+
+Expérience dans l'analyse, la conception, le développement et le suivi de projets web.
+
+Compétences principales :
+
+* PHP
+* JavaScript
+* MySQL / PostgreSQL
+* API REST / JSON
+* CodeIgniter
+* Laravel
+* Analyse et conception
+* Gestion et suivi de projets web
+
+Ce projet constitue également une démonstration de ma capacité à **m'adapter à de nouvelles technologies et à moderniser mon environnement de développement PHP**.
+
+## Dépôt GitHub
+
+Le code source de ce projet est disponible sur GitHub :
+
+**https://github.com/Jarry-github/gestion-pro**
+
+---
+
+*Projet de démonstration à vocation professionnelle et technique.*
