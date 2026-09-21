@@ -17,7 +17,34 @@ class ProjetController extends Controller
 	        'Application de gestion de projets'
 	    ];*/
 
-	    $projets = Projet::all();
+	    //$projets = Projet::all();
+
+	    $projets = [
+	        (object) [
+	            'nom' => 'Réquisition',
+	            'description' => ' Backoffice d’extraction et de consultation de données et monitoring.',
+	            'statut' => 'Terminé',
+	            'techo1'  => 'PHP',
+	            'techo2'  => 'CodeIgniter MVC',
+	            'techo3'  => 'MySQL'
+	        ],
+	        (object) [
+	            'nom' => 'MIS UNICEF - GUICHET UNIQUE',
+	            'description' => 'Plateforme web de mise à jour et de statistiques des données collectées.',
+	            'statut' => 'Terminé',
+	            'techo1'  => 'PHP',
+	            'techo2'  => 'CodeIgniter MVC',
+	            'techo3'  => 'MySQL'
+	        ],
+	        (object) [
+	            'nom' => 'MIS FID - Fonds d\'Intervention pour le Développement',
+	            'description' => 'Collecte d’enquêtes, administration des utilisateurs et gestion de paiement des ménages.',
+	            'statut' => 'Terminé',
+	            'techo1'  => 'PHP',
+	            'techo2'  => 'CodeIgniter MVC',
+	            'techo3'  => 'MySQL'
+	        ]
+	    ];
 
 	    return view('projets', compact('projets'));
 	}
