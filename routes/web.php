@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjetController;
+use App\Http\Controllers\PortfolioController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,3 +15,6 @@ Route::post('/projets', [ProjetController::class, 'store']);
 
 Route::get('/projets/{projet}/edit', [ProjetController::class, 'edit']);
 Route::put('/projets/{projet}', [ProjetController::class, 'update']);
+
+Route::get('/portfolio', [PortfolioController::class, 'index'])
+    ->name('portfolio');
